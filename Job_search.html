@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.11.6, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.11.6, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
+  <meta name="description" content="Website Builder Description">
+  
+  <title>Job Search</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+  
+  
+</head>
+<body>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyCzaICYOJj5cpQXYRkA8WAh6YsphJUr_p0",
+    authDomain: "file-fddfc.firebaseapp.com",
+    databaseURL: "https://file-fddfc.firebaseio.com",
+    projectId: "file-fddfc",
+    storageBucket: "file-fddfc.appspot.com",
+    messagingSenderId: "540482365901",
+    appId: "1:540482365901:web:1d3bdd5199add9eb553c84",
+    measurementId: "G-GB41KLYL53"
+  };
+  var s=firebase.initializeApp(firebaseConfig);
+  console.log(s);
+  var database=firebase.database();
+  
+  
+  function writeData()
+{
+	// firebase.database().ref("User1/"+email.document.getElementById("email-header15-1o").value).set({
+	var ref=database.ref('Job_search');
+	var data=
+	{
+		job_Id:document.getElementById("j_id").value,
+		Job_desg:document.getElementById("desg").value,
+		Job_sal:document.getElementById("sal").value,
+		Job_exp:document.getElementById("exp").value,
+		Qualification:document.getElementById("qua").value,
+		KeySkills:document.getElementById("ks").value,
+		loc:document.getElementById("location").value
+	}
+	ref.push(data);
+		
+}
+</script>
+  <section class="menu cid-rKe0wTICtM" once="menu" id="menu1-19">
+
+    
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top collapsed bg-color transparent">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-5" href="https://www.google.com/">FidelSoftech</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="https://www.google.com/">
+                        <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
+                        Services
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="https://www.google.com/">
+                        <span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                        About Us
+                    </a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="admin_login.html">
+                        <span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                        Log out
+                    </a>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+</section>
+
+<section class="engine"><a href="https://mobirise.info/t">free amp templates</a></section><section class="cid-rKeJKdKv46 mbr-fullscreen mbr-parallax-background" id="header2-1s">
+
+    
+
+    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(35, 35, 35);"></div>
+
+    <div class="container align-center">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">Job Search</h1>
+                
+                <div class="container" align="center">
+	<form action="ranking_page.html">
+ 		 <input type="text" id="j_id" name="jsearch" placeholder="Job Id Search" /> <p>&nbsp;</p>
+	<input type="text" id="desg" name="designation" placeholder="Job designation" /> <p>&nbsp;</p>
+	<input type="text" id="sal" name="salary" placeholder="salary" /> <p>&nbsp;</p>
+	<input type="text" id="exp" name="exp" placeholder="Job experience" /> <p>&nbsp;</p>
+	<input type="text" id="qua" name="qua" placeholder="Qualification" /> <p>&nbsp;</p>
+	<input type="text" id="ks" name="ks" placeholder="Key Skills" /> <p>&nbsp;</p>	
+	<select id="location" name="location">
+		<option value=" ">location</option>
+		<option value="akrudi">Akrudi</option>
+		<option value="Chinchwad">Chinchwad</option>
+		<option value="Shivajinagar">Shivajinagar</option>
+	</select>
+	</form>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+</div>
+				
+				
+				
+				
+                <div class="mbr-section-btn"><a class="btn btn-md btn-primary display-4" href="Shortlisted_candidate.html" onClick="writeData()">SUBMIT</a>
+                    <a class="btn btn-md btn-secondary display-4" href="Job_search.html">CANCEL</a></div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+<section once="footers" class="cid-rKe66uPeto" id="footer7-1a">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="row row-links">
+                <ul class="foot-menu">
+                    
+                    
+                    
+                    
+                    
+                <li class="foot-menu-item mbr-fonts-style display-7">
+                        <a class="text-white mbr-bold" href="#" target="_blank">About us</a>
+                    </li><li class="foot-menu-item mbr-fonts-style display-7">
+                        <a class="text-white mbr-bold" href="#" target="_blank">Services</a>
+                    </li><li class="foot-menu-item mbr-fonts-style display-7">
+                        <a class="text-white mbr-bold" href="#" target="_blank">Get In Touch</a>
+                    </li><li class="foot-menu-item mbr-fonts-style display-7">
+                        <a class="text-white mbr-bold" href="#" target="_blank">Careers</a>
+                    </li><li class="foot-menu-item mbr-fonts-style display-7">
+                        <a class="text-white mbr-bold" href="#" target="_blank">Work</a>
+                    </li></ul>
+            </div>
+            <div class="row social-row">
+                <div class="social-list align-right pb-2">
+                    
+                    
+                    
+                    
+                    
+                    
+                <div class="soc-item">
+                        <a href="https://twitter.com" target="_blank">
+                            <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                        </a>
+                    </div><div class="soc-item">
+                        <a href="https://www.facebook.com" target="_blank">
+                            <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                        </a>
+                    </div><div class="soc-item">
+                        <a href="https://www.youtube.com" target="_blank">
+                            <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                        </a>
+                    </div><div class="soc-item">
+                        <a href="https://instagram.com" target="_blank">
+                            <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                        </a>
+                    </div><div class="soc-item">
+                        <a href="https://plus.google.com" target="_blank">
+                            <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
+                        </a>
+                    </div><div class="soc-item">
+                        <a href="https://www.behance.net" target="_blank">
+                            <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
+                        </a>
+                    </div></div>
+            </div>
+            <div class="row row-copirayt">
+                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                    © Copyright 2019 FidelSoftech - All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/parallax/jarallax.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  
+  
+</body>
+</html>
