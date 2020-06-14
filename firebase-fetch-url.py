@@ -133,4 +133,10 @@ users_ref.set({
     count:coun,
     st:st
 })
+
+#Storing cv score in Scores (Firebase)
+users_ref =firebase.database().ref('Scores/'+phone)
+users_ref.set({
+    cv_score:coun
+})
 print "done"
