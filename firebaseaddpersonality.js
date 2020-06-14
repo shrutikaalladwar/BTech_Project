@@ -21,7 +21,8 @@ var firebaseConfig = {
 							 option2:document.getElementById("option12").value,
 							 option3:document.getElementById("option13").value,
 							 option4:document.getElementById("option14").value,
-							 answer:document.getElementById("ans1").value
+							 answer1:document.getElementById("ans1").value,
+							 answer2:document.getElementById("ans1_").value
 							 });
 			ref.child("q2").set({
 							 question:document.getElementById("q2").value,
@@ -29,7 +30,8 @@ var firebaseConfig = {
 							 option2:document.getElementById("option22").value,
 							 option3:document.getElementById("option23").value,
 							 option4:document.getElementById("option24").value,
-							 answer:document.getElementById("ans2").value
+							 answer1:document.getElementById("ans2").value,
+							 answer2:document.getElementById("ans2_").value
 							 });
 			ref.child("q3").set({
 							 question:document.getElementById("q3").value,
@@ -37,7 +39,8 @@ var firebaseConfig = {
 							 option2:document.getElementById("option32").value,
 							 option3:document.getElementById("option33").value,
 							 option4:document.getElementById("option34").value,
-							 answer:document.getElementById("ans3").value
+							 answer1:document.getElementById("ans3").value,
+							 answer2:document.getElementById("ans3_").value
 							 });
 			ref.child("q4").set({
 							 question:document.getElementById("q4").value,
@@ -45,7 +48,8 @@ var firebaseConfig = {
 							 option2:document.getElementById("option42").value,
 							 option3:document.getElementById("option43").value,
 							 option4:document.getElementById("option44").value,
-							 answer:document.getElementById("ans4").value
+							 answer1:document.getElementById("ans4").value,
+							 answer2:document.getElementById("ans4_").value
 							 });
 			ref.child("q5").set({
 							 question:document.getElementById("q5").value,
@@ -53,7 +57,8 @@ var firebaseConfig = {
 							 option2:document.getElementById("option52").value,
 							 option3:document.getElementById("option53").value,
 							 option4:document.getElementById("option54").value,
-							 answer:document.getElementById("ans5").value
+							 answer1:document.getElementById("ans5").value,
+							 answer2:document.getElementById("ans5_").value
 							 });
 			ref.child("q6").set({
 							 question:document.getElementById("q6").value,
@@ -61,7 +66,8 @@ var firebaseConfig = {
 							 option2:document.getElementById("option62").value,
 							 option3:document.getElementById("option63").value,
 							 option4:document.getElementById("option64").value,
-							 answer:document.getElementById("ans6").value
+							 answer1:document.getElementById("ans6").value,
+							 answer2:document.getElementById("ans6_").value
 							 });
 						
 			ref.child("q7").set({
@@ -70,7 +76,8 @@ var firebaseConfig = {
 							 option2:document.getElementById("option72").value,
 							 option3:document.getElementById("option73").value,
 							 option4:document.getElementById("option74").value,
-							 answer:document.getElementById("ans7").value
+							 answer1:document.getElementById("ans7").value,
+							 answer2:document.getElementById("ans7_").value
 							 });
 			ref.child("q8").set({
 							 question:document.getElementById("q8").value,
@@ -78,7 +85,8 @@ var firebaseConfig = {
 							 option2:document.getElementById("option82").value,
 							 option3:document.getElementById("option83").value,
 							 option4:document.getElementById("option84").value,
-							 answer:document.getElementById("ans8").value
+							 answer1:document.getElementById("ans8").value,
+							 answer2:document.getElementById("ans8_").value
 							 });
 			ref.child("q9").set({
 							 question:document.getElementById("q9").value,
@@ -86,7 +94,8 @@ var firebaseConfig = {
 							 option2:document.getElementById("option92").value,
 							 option3:document.getElementById("option93").value,
 							 option4:document.getElementById("option94").value,
-							 answer:document.getElementById("ans9").value
+							 answer1:document.getElementById("ans9").value,
+							 answer2:document.getElementById("ans9_").value
 							 });
 			ref.child("q10").set({
 							 question:document.getElementById("q10").value,
@@ -94,7 +103,8 @@ var firebaseConfig = {
 							 option2:document.getElementById("option102").value,
 							 option3:document.getElementById("option103").value,
 							 option4:document.getElementById("option104").value,
-							 answer:document.getElementById("ans10").value
+							 answer1:document.getElementById("ans10").value,
+							 answer2:document.getElementById("ans10_").value
 							 });
 						
 					
