@@ -20,14 +20,44 @@ ref.on('value',function(snapshot){
 		var temp = snapshot.val();
 		var keys = Object.keys(temp);
         
-        console.log(keys);
 		for(var k = 0; k<keys.length; k++)
 		{
             id = keys[k];
             var aptitude_score  = temp[id].aptitude_score;
             var personality_score = temp[id].personality_score;
             var cv_score = temp[id].cv_score
+            var weighted_score = parseInt(aptitude_score) + parseInt(personality_score) + parseInt(cv_score);
+            var above_score = 9;
 
-            console.log("id:"+id +" aptitude:"+aptitude_score+" personality:"+personality_score+" cv:"+cv_score);
+            //Ref for fetch name and email of candidate
+            var name ;
+            var email;
+            // var ref2 =  firebase.database().ref('candidate/'+id);
+            // ref2.on('value',function(snapshot2){
+            //   var temp2 = snapshot2.val();
+
+            //   if(temp2 == null) {
+            //     name = "";
+            //     email = "";
+            //   } else {
+            //     name = temp2.name;
+            //     email = temp2.email;
+            //   }
+
+            //   console.log('name :'+name+' email :'+email)
+            // });
+
+            if(weighted_score > above_score){
+              console.log("id:"+id +" aptitude:"+aptitude_score+" personality:"+personality_score+" cv:"+cv_score);
+              $(".candidate").append("<tr>"+
+              "<td>"+name+"</td>"+
+              "<td>"+email+"</td>"+
+              "<td>"+id+"</td>"+
+              "<td>"+aptitude_score+"</td>"+
+              "<td>"+cv_score+"</td>"+
+              "<td>"+personality_score+"</td>"+
+              "<td>"+weighted_score+"</td>"+
+              "</tr>");
+            }
 		}
 });
