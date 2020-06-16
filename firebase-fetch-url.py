@@ -144,3 +144,5 @@ for email in allEmail:
 
     #Storing cv score in Scores (Firebase)
     database.child("Scores").child(phon).child("cv_score").set(str(coun))
+    database.child("Scores").child(phon).child("personality_score").set("0")
+    database.child("Scores").child(phon).child("aptitude_score").set("0")

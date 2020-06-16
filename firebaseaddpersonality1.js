@@ -117,22 +117,31 @@ function display()
     //Adding Personality score to Firebase Database
     var refnew=database.ref('Scores').child(userRegID);
 	var data = {};
-	refnew.on("value", function(snapshot) {
+	refnew.once("value").then(function(snapshot) {
 		data = snapshot.val();
-		var personality_score = "personality_score";
-		if(data==null){
-			var x = {personality_score:score};
-			data = x;
-		}
+
+		if(data["aptitude_score"]==undefined)
+			aptitude_score = 0;
 		else 
-			data[personality_score]=score;
+			aptitude_score = data["aptitude_score"]
 		
+		if(data["cv_score"]==undefined)
+			cv_score = 0;
+		else
+			cv_score = data["cv_score"]
+	
+		refnew = database.ref('Scores');
+		refnew.child(userRegID).set({
+			aptitude_score : aptitude_score,
+			personality_score : score,
+			cv_score : cv_score
+		});
+
 		}, function (error) {
 		console.log("Error: " + error.code);
 	});
     
-	refnew = database.ref('Scores');
-	refnew.child(userRegID).set(data);
+	
 }
 		
 

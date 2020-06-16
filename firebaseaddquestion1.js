@@ -123,21 +123,27 @@ function display()
 	var data = {};
 	refnew.on("value", function(snapshot) {
 		data = snapshot.val();
+
+		if(data["personality_score"]==undefined)
+			personality_score = 0;
+		else
+			personality_score = data["personality_score"];
+
+		if(data["cv_score"]==undefined)
+			cv_score = 0;
+		else	
+			cv_score = data["cv_score"];
+
+		refnew = database.ref('Scores');
+		refnew.child(userRegID).set({
+			aptitude_score : score,
+			personality_score : personality_score,
+			cv_score : cv_score
+		});
 		
 		}, function (error) {
 		console.log("Error: " + error.code);
-	});
-	
-	var aptitude_score = "aptitude_score";
-	if(data==null){
-		var x = {aptitude_score:score};
-		data = x;
-	}
-	else 
-		data["aptitude_score"]=score;
-		
-    refnew = database.ref('Scores');
-	refnew.child(userRegID).set(data);
+	});	
 }
 		
 
