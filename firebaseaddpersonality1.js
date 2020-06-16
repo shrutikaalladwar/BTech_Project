@@ -127,14 +127,12 @@ function display()
 		else 
 			data[personality_score]=score;
 		
-		refnew = database.ref('Scores');
-		refnew.child(userRegID).set(data);
-		
 		}, function (error) {
 		console.log("Error: " + error.code);
 	});
     
-   
+	refnew = database.ref('Scores');
+	refnew.child(userRegID).set(data);
 }
 		
 

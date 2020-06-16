@@ -143,8 +143,4 @@ for email in allEmail:
     database.child("uniqueskills").child(phon).child("count").set(str(coun))
 
     #Storing cv score in Scores (Firebase)
-    users_ref =firebase.database().ref('Scores/'+phon)
-    users_ref.set({
-        cv_score:coun
-    })
-
+    database.child("Scores").child(phon).child("cv_score").set(str(coun))
