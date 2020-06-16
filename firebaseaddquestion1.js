@@ -47,13 +47,15 @@ var ref3 = firebase.database().ref('AddQuestions');
 					var option2 = temp3[id].option2;
 					var option3 = temp3[id].option3;
 					var option4 = temp3[id].option4;
+					console.log('inside id :'+id);
+
 				$( ".mainDiv" ).append("<form class='questionForm' id='q1' data-question='1'>"+
 					"<h3>"+question+"</h3>"+
 					"<ul>"+
-						"<li><input type='radio' name='q1' value='"+option1+"' />"+option1+"</li>"+
-						"<li><input type='radio' name='q1' value='"+option2+"' />"+option2+"</li>"+
-						"<li><input type='radio' name='q1' value='"+option3+"' />"+option3+"</li>"+
-					"<li><input type='radio' name='q1' value='"+option4+"' />"+option4+"</li>"+
+						"<li><input type='radio' id='a"+id+"' name='q1' value='"+option1+"' />"+option1+"</li>"+
+						"<li><input type='radio' id='b"+id+"' name='q1' value='"+option2+"' />"+option2+"</li>"+
+						"<li><input type='radio' id='c"+id+"' name='q1' value='"+option3+"' />"+option3+"</li>"+
+					"<li><input type='radio' id='d"+id+"' name='q1' value='"+option4+"' />"+option4+"</li>"+
 						"</ul>"+
 		"</form>");
 	}
@@ -64,6 +66,7 @@ var ref3 = firebase.database().ref('AddQuestions');
 function display()
 {
 	var ele=document.getElementsByName('q1');
+
 	var score=0;
 	for(var i=0;i<ele.length;i++)
 	{
@@ -83,29 +86,58 @@ function display()
 			var option2 = temp3[id].option2;
 			var option3 = temp3[id].option3;
 			var option4 = temp3[id].option4;
-			
-			for(var i=0;i<ele.length;i++)
-			{
-				if(ele[i].checked)
-				{
-					console.log('elemenet :' +ele[i].value +"  answer : "+answer);
-					if(ele[i].value==answer)
-					{
-						score++;
-					}
-				}
+			console.log('id :'+id);
+
+			var x1 = document.getElementById("a"+id).checked;
+			var x2 = document.getElementById("b"+id).checked;
+			var x3 = document.getElementById("c"+id).checked;
+			var x4 = document.getElementById("d"+id).checked;
+
+			console.log(x1+" "+x2+" "+x3+" "+x4);
+
+			var answer_from_user ;
+			if(x1==true){
+				answer_from_user = document.getElementById("a"+id).value;
+			} else if(x2==true){
+				answer_from_user = document.getElementById("b"+id).value;
+			} else if(x3==true){
+				answer_from_user = document.getElementById("c"+id).value;
+			} else if(x4==true){
+				answer_from_user = document.getElementById("d"+id).value;
+			} else{
+				answer_from_user = ""
 			}
+
+			console.log('answer from user :'+answer_from_user+" answer from db:"+answer);
+			if(answer == answer_from_user){
+				score++;
+			}
+		
 		}
 		console.log('score is '+score);
 	});
 	
 
 	//Adding Aptitude score to Firebase Database
-	var ref=database.ref('Scores');
-	ref.child(userRegID).set({
-		aptitude_score: score
+	var refnew=database.ref('Scores').child(userRegID);
+	var data = {};
+	refnew.on("value", function(snapshot) {
+		data = snapshot.val();
+		
+		}, function (error) {
+		console.log("Error: " + error.code);
 	});
-
+	
+	var aptitude_score = "aptitude_score";
+	if(data==null){
+		var x = {aptitude_score:score};
+		data = x;
+	}
+	else 
+		data["aptitude_score"]=score;
+		
+    refnew = database.ref('Scores');
+	refnew.child(userRegID).set(data);
 }
 		
 
