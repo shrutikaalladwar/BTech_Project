@@ -48,8 +48,8 @@ ref.on('value',function(snapshot){
               
               if(document.getElementById("candidate").rows[cnt] != null){
                 x = document.getElementById("candidate").rows[cnt].cells
-                x[0].innerHTML = name;
-                x[1].innerHTML = email
+                x[1].innerHTML = name;
+                x[2].innerHTML = email
               }
               
               cnt++;
@@ -58,6 +58,7 @@ ref.on('value',function(snapshot){
             
             if(weighted_score > above_score){
               $(".candidate").append("<tr>"+
+              "<td></td>"+
               "<td>"+"loading.."+"</td>"+
               "<td>"+"loading.."+"</td>"+
               "<td>"+id+"</td>"+
