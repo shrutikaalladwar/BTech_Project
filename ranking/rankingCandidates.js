@@ -32,23 +32,27 @@ ref.on('value',function(snapshot){
             //Ref for fetch name and email of candidate
             var name ;
             var email;
-            // var ref2 =  firebase.database().ref('candidate/'+id);
-            // ref2.on('value',function(snapshot2){
-            //   var temp2 = snapshot2.val();
+            var ref2 =  firebase.database().ref('candidate/'+id);
+            var cnt = 0;
+            ref2.once('value',function(snapshot2){
+              var temp2 = snapshot2.val();
 
-            //   if(temp2 == null) {
-            //     name = "";
-            //     email = "";
-            //   } else {
-            //     name = temp2.name;
-            //     email = temp2.email;
-            //   }
+              if(temp2 == null) {
+                name = "";
+                email = "";
+              } else {
+                name = temp2.name;
+                email = temp2.email;
+              }
 
-            //   console.log('name :'+name+' email :'+email)
-            // });
-
+              var x = document.getElementById("candidate").rows[cnt].cells;
+              x[0].innerHTML = name;
+              x[1].innerHTML = email
+              cnt++;
+              
+            });
+            
             if(weighted_score > above_score){
-              console.log("id:"+id +" aptitude:"+aptitude_score+" personality:"+personality_score+" cv:"+cv_score);
               $(".candidate").append("<tr>"+
               "<td>"+name+"</td>"+
               "<td>"+email+"</td>"+
@@ -61,3 +65,5 @@ ref.on('value',function(snapshot){
             }
 		}
 });
+
+
