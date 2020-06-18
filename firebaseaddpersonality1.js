@@ -137,6 +137,8 @@ function display()
 			cv_score : cv_score
 		});
 
+		location.replace("Thank_you.html");
+
 		}, function (error) {
 		console.log("Error: " + error.code);
 	});

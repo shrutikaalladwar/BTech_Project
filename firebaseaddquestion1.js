@@ -140,6 +140,8 @@ function display()
 			personality_score : personality_score,
 			cv_score : cv_score
 		});
+
+		location.replace("personality_test.html?id="+userRegID);
 		
 		}, function (error) {
 		console.log("Error: " + error.code);
