@@ -7,7 +7,7 @@ var firebaseConfig = {
     messagingSenderId: "540482365901",
     appId: "1:540482365901:web:1d3bdd5199add9eb553c84",
     measurementId: "G-GB41KLYL53"
-  };
+};
 
 
 // Fetching User regid 
@@ -65,6 +65,7 @@ var ref3 = firebase.database().ref('AddQuestions');
 
 function display()
 {
+	console.log("display called");
 	var ele=document.getElementsByName('q1');
 
 	var score=0;
@@ -149,4 +150,25 @@ function display()
 }
 		
 
+//Timer
+var seconds = 5;
+var minutes = 10;
+var timer = setInterval(function() {
+	
+	document.getElementById("timer").innerHTML = minutes + "m      :      "+seconds+"s";
+	console.log(minutes+" "+seconds);
+	seconds--;
+	if(seconds ===0){
+		minutes--;
+		seconds = 60;
+	}
+	if((minutes+1) === 0) {
+		stopInterval()
+	}
+}, 1000);
 
+var stopInterval = function() {
+	display();
+	console.log('time is up!');
+	clearInterval(timer);
+}

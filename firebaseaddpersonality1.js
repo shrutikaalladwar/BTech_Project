@@ -143,8 +143,33 @@ function display()
 		console.log("Error: " + error.code);
 	});
     
-	
 }
+
+
+
+//Timer
+var seconds = 5;
+var minutes = 5;
+var timer = setInterval(function() {
+	
+	document.getElementById("timer").innerHTML = minutes + "m      :      "+seconds+"s";
+	console.log(minutes+" "+seconds);
+	seconds--;
+	if(seconds ===0){
+		minutes--;
+		seconds = 60;
+	}
+	if((minutes+1) === 0) {
+		stopInterval()
+	}
+}, 1000);
+
+var stopInterval = function() {
+	display();
+	console.log('time is up!');
+	clearInterval(timer);
+}
+
 		
 
 
